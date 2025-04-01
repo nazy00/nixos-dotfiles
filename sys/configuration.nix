@@ -121,7 +121,7 @@ in
   # networking.firewall.enable = false;
 
   nixpkgs.hostPlatform = {
-    system = pkgs.system;
+    system = userConfig.system;
   };
 
   # Bootloader.
