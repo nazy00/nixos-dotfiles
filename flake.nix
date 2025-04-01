@@ -1,5 +1,5 @@
 {
-  description = "nazy00/nix-dotfiles";
+  description = "nazy00/nixos-dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-24.11";
