@@ -34,6 +34,7 @@
         locale = "en_CA.UTF-8";
         timezone = "America/Halifax";
         nixos = "~/.config/nixos";
+        system = "x86_64-linux";
       };
       genArgs =
         { host, ... }@extraArgs:
@@ -47,7 +48,7 @@
     {
       homeConfigurations = {
         linux = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          pkgs = nixpkgs.legacyPackages.${userConfig.system};
           modules = [
             ./sys/nonfree.nix
             ./sys/home.nix
