@@ -49,6 +49,7 @@
         linux = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           modules = [
+            ./sys/nonfree.nix
             ./sys/home.nix
             ./pkg/list.nix
             ./pkg/utils.nix
@@ -66,6 +67,7 @@
       nixosConfigurations = {
         linux = nixpkgs.lib.nixosSystem {
           modules = [
+            ./sys/nonfree.nix
             ./sys/configuration.nix
             ./sys/hardware-configuration.nix
             ./pkg/steam.nix
