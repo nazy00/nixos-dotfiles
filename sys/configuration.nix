@@ -120,10 +120,6 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nixpkgs.hostPlatform = {
-    system = userConfig.system;
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
