@@ -52,7 +52,6 @@
           ./sys/nonfree.nix
           ./sys/home.nix
           ./pkg/list.nix
-          ./pkg/utils.nix
           ./pkg/bspwm.nix
           ./pkg/zsh.nix
           ./pkg/yazi.nix
