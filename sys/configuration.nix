@@ -7,6 +7,7 @@
   pkgs,
   hostName,
   userConfig,
+  extraArgs,
   ...
 }:
 let
@@ -16,6 +17,34 @@ let
   userTZ = userConfig.timezone;
 in
 {
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+    operation = "boot";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file"
+    ];
+    flake = "path:${extraArgs.home}${builtins.substring 1 (-1) userConfig.nixos}";
+  };
+  nix = {
+    package = lib.mkDefault pkgs.nixVersions.stable;
+    gc = {
+      automatic = true;
+      frequency = "weekly";
+      options = "--delete-older-than 14d";
+    };
+    settings = {
+      trusted-users = [ userName ];
+      auto-optimise-store = true;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userName} = {
     shell = pkgs.zsh;

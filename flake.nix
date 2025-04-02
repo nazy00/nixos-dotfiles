@@ -46,36 +46,34 @@
         };
     in
     {
-      homeConfigurations = {
-        linux = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${userConfig.system};
-          modules = [
-            ./sys/nonfree.nix
-            ./sys/home.nix
-            ./pkg/list.nix
-            ./pkg/utils.nix
-            ./pkg/bspwm.nix
-            ./pkg/zsh.nix
-            ./pkg/yazi.nix
-            ./pkg/vscode.nix
-          ];
-          extraSpecialArgs = genArgs {
-            host = userConfig.hostname;
-          };
+      homeConfigurations.${userConfig.username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${userConfig.system};
+        modules = [
+          ./sys/nonfree.nix
+          ./sys/home.nix
+          ./pkg/list.nix
+          ./pkg/utils.nix
+          ./pkg/bspwm.nix
+          ./pkg/zsh.nix
+          ./pkg/yazi.nix
+          ./pkg/vscode.nix
+        ];
+        extraSpecialArgs = genArgs {
+          host = userConfig.hostname;
+          home = "/home/${userConfig.username}";
         };
       };
 
-      nixosConfigurations = {
-        linux = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./sys/nonfree.nix
-            ./sys/configuration.nix
-            ./sys/hardware-configuration.nix
-            ./pkg/steam.nix
-          ];
-          specialArgs = genArgs {
-            host = userConfig.hostname;
-          };
+      nixosConfigurations.${userConfig.hostname} = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./sys/nonfree.nix
+          ./sys/configuration.nix
+          ./sys/hardware-configuration.nix
+          ./pkg/steam.nix
+        ];
+        specialArgs = genArgs {
+          host = userConfig.hostname;
+          home = "/home/${userConfig.username}";
         };
       };
     };
