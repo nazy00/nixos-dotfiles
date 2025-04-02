@@ -6,6 +6,19 @@
       nix-direnv.enable = true;
     };
 
+    kitty = {
+      enable = true;
+      themeFile = "Doom_Vibrant";
+      settings = {
+        shell = "zsh";
+        font_family = "CaskaydiaCove Nerd Font Mono";
+        font_size = 14;
+        enable_audio_bell = false;
+        tab_bar_edge = "top";
+        background_opacity = 0.96;
+      };
+    };
+
     zoxide = {
       enable = true;
       options = [
@@ -33,19 +46,6 @@
     bottom = {
       enable = true;
       settings.styles.theme = "nord";
-    };
-
-    kitty = {
-      enable = true;
-      themeFile = "Doom_Vibrant";
-      settings = {
-        shell = "zsh";
-        font_family = "CaskaydiaCove Nerd Font Mono";
-        font_size = 14;
-        enable_audio_bell = false;
-        tab_bar_edge = "top";
-        background_opacity = 0.96;
-      };
     };
 
     mpv = {

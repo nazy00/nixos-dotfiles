@@ -76,14 +76,14 @@ in
 
       # reloading configs
       zrc = ". $ZDOTDIR/.zshrc";
+      re-hm = "home-manager switch --flake ${nixConfigDir}";
+      re-nix = "sudo -H nixos-rebuild switch --flake ${nixConfigDir}";
 
       # package management
       yin = "nix-shell -p";
       yang = "nix-search";
       wuji = "nix-collect-garbage -d && sudo -H nix-collect-garbage -d";
       yup = "nix flake update --flake ${nixConfigDir} && re-nix";
-      re-hm = "home-manager switch --flake ${nixConfigDir}#linux";
-      re-nix = "sudo -H nixos-rebuild switch --flake ${nixConfigDir}#linux";
     };
   };
 }
