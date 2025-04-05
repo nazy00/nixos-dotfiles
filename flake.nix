@@ -44,6 +44,10 @@
           inherit userConfig;
           hostName = host;
         };
+      moduleArgs = genArgs {
+        host = userConfig.hostname;
+        home = "/home/${userConfig.username}";
+      };
     in
     {
       homeConfigurations.${userConfig.username} = home-manager.lib.homeManagerConfiguration {
@@ -57,10 +61,7 @@
           ./pkg/yazi.nix
           ./pkg/vscode.nix
         ];
-        extraSpecialArgs = genArgs {
-          host = userConfig.hostname;
-          home = "/home/${userConfig.username}";
-        };
+        extraSpecialArgs = moduleArgs;
       };
 
       nixosConfigurations.${userConfig.hostname} = nixpkgs.lib.nixosSystem {
@@ -70,10 +71,7 @@
           ./sys/hardware-configuration.nix
           ./pkg/steam.nix
         ];
-        specialArgs = genArgs {
-          host = userConfig.hostname;
-          home = "/home/${userConfig.username}";
-        };
+        specialArgs = moduleArgs;
       };
     };
 }
