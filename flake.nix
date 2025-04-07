@@ -27,26 +27,26 @@
       ...
     }@inputs:
     let
-      userConfig = {
-        nickname = "Naziya";
-        username = "nazy00";
-        hostname = "hostility";
-        locale = "en_CA.UTF-8";
-        timezone = "America/Halifax";
-        nixos = "~/.config/nixos";
-        system = "x86_64-linux";
-      };
-      genArgs =
-        { host, ... }@extraArgs:
+      userConfig =
+        let
+          nickname = "Naziya";
+          username = "nazy00";
+          hostname = "hostility";
+          home = "/home/${username}";
+        in
         {
-          inherit inputs;
-          inherit extraArgs;
-          inherit userConfig;
-          hostName = host;
+          inherit nickname;
+          inherit username;
+          inherit hostname;
+          inherit home;
+          locale = "en_CA.UTF-8";
+          timezone = "America/Halifax";
+          nixos = "${home}/.config/nixos";
+          system = "x86_64-linux";
         };
-      moduleArgs = genArgs {
-        host = userConfig.hostname;
-        home = "/home/${userConfig.username}";
+      moduleArgs = {
+        inherit inputs;
+        inherit userConfig;
       };
     in
     {

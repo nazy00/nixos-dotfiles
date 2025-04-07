@@ -5,12 +5,11 @@
   lib,
   config,
   pkgs,
-  hostName,
   userConfig,
-  extraArgs,
   ...
 }:
 let
+  hostName = userConfig.hostname;
   userName = userConfig.username;
   userNickname = userConfig.nickname;
   userLocale = userConfig.locale;
@@ -26,7 +25,7 @@ in
       "nixpkgs"
       "--commit-lock-file"
     ];
-    flake = "path:${extraArgs.home}${builtins.substring 1 (-1) userConfig.nixos}";
+    flake = "path:${userConfig.nixos}";
   };
   nix = {
     package = lib.mkDefault pkgs.nixVersions.stable;
