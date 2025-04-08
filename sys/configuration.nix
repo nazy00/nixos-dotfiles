@@ -32,7 +32,7 @@ in
     gc = {
       automatic = true;
       frequency = "weekly";
-      options = "--delete-older-than 14d";
+      options = "--delete-older-than 30d";
     };
     settings = {
       trusted-users = [ userName ];
