@@ -31,7 +31,7 @@ in
     package = lib.mkDefault pkgs.nixVersions.stable;
     gc = {
       automatic = true;
-      frequency = "weekly";
+      dates = "weekly";
       options = "--delete-older-than 30d";
     };
     settings = {
@@ -43,6 +43,9 @@ in
       ];
     };
   };
+
+  # enable zsh for the system
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userName} = {
@@ -123,7 +126,7 @@ in
 
   # HiDPI display config
   services.xserver = {
-    # dpi = 96;
+    dpi = 96;
     upscaleDefaultCursor = true;
   };
   environment.variables = {
