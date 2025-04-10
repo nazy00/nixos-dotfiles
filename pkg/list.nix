@@ -50,10 +50,12 @@ in
         gimp
 
         # >---< DO NOT REMOVE >---< #
+        nerd-fonts.caskaydia-cove
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
         nixfmt-rfc-style
         nix-search-cli
         xorg.xdpyinfo
-        nerdfonts
         dfu-util
         openssl
         poppler
