@@ -1,7 +1,7 @@
 { ... }:
 {
   stylix = {
-    enable = false;
-    image = ../cfg/wallpaper.png;
+    enable = true;
+    image = ../cfg/wallpaper.jpg;
   };
 }
