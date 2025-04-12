@@ -1,6 +1,7 @@
 { ... }:
 {
   dconf.settings = {
+    "org/gnome/desktop/background".picture-uri = "file://${../cfg/wallpaper.jpg}";
     "org/gnome/desktop/wm/preferences".theme = "Qogir-dark";
     # "org/gnome/desktop/interface" = {
     #   gtk-theme = "Qogir-dark";
