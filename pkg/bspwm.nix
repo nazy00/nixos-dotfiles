@@ -1,6 +1,5 @@
 { ... }:
 {
-  home.file.".background-image".source = ../cfg/wallpaper.jpg;
   dconf.settings = {
     "org/gnome/desktop/wm/preferences".theme = "Qogir-dark";
     # "org/gnome/desktop/interface" = {
