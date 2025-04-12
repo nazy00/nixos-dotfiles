@@ -2,12 +2,12 @@
 {
   dconf.settings = {
     "org/gnome/desktop/wm/preferences".theme = "Qogir-dark";
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Qogir-dark";
-      icon-theme = "WhiteSur-dark";
-      cursor-theme = "Qogir-dark";
-      cursor-size = 64;
-    };
+    # "org/gnome/desktop/interface" = {
+    #   gtk-theme = "Qogir-dark";
+    #   icon-theme = "WhiteSur-dark";
+    #   cursor-theme = "Qogir-dark";
+    #   cursor-size = 64;
+    # };
   };
 
   xsession.windowManager.bspwm = {

@@ -90,9 +90,8 @@ in
     # Enable the XFCE Desktop Environment.
     displayManager.lightdm = {
       enable = true;
-      greeters = {
-        imports = [ ./gtk.nix ];
-      };
+      greeters = import ./gtk.nix { inherit pkgs; };
+
     };
     desktopManager = {
       xterm.enable = false;
@@ -121,7 +120,7 @@ in
     # GDK_DPI_SCALE = "0.4";
     # _JAVA_OPTIONS = "-sun.java2d.uiScale=2.2";
     # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    XCURSOR_SIZE = 64;
+    # XCURSOR_SIZE = 64;
   };
 
   # for Zsh completions of system packages
