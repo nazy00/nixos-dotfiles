@@ -101,6 +101,7 @@ in
         enableXfwm = false;
         enableScreensaver = false;
       };
+      wallpaper.mode = "fill";
     };
 
     # Configure keymap in X11
