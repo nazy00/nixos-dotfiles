@@ -26,7 +26,7 @@ in
     };
   };
   nix = {
-    package = lib.mkDefault pkgs.nixVersions.stable;
+    package = pkgs.nixVersions.stable;
     gc = {
       automatic = true;
       frequency = "weekly";
@@ -34,7 +34,6 @@ in
     };
     settings = {
       trusted-users = [ userName ];
-      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
