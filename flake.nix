@@ -5,19 +5,21 @@
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager?ref=master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions?ref=master";
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     cypkgs = {
-      url = "github:cybardev/nix-channel?ref=main";
+      url = "github:cybardev/nix-channel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -53,9 +55,11 @@
       homeConfigurations.${userConfig.username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${userConfig.system};
         modules = [
+          inputs.stylix.homeManagerModules.stylix
           ./sys/gtk.nix
           ./sys/nonfree.nix
           ./sys/home.nix
+          ./pkg/stylix.nix
           ./pkg/list.nix
           ./pkg/bspwm.nix
           ./pkg/zsh.nix
@@ -67,9 +71,11 @@
 
       nixosConfigurations.${userConfig.hostname} = nixpkgs.lib.nixosSystem {
         modules = [
+          inputs.stylix.nixosModules.stylix
           ./sys/nonfree.nix
           ./sys/configuration.nix
           ./sys/hardware-configuration.nix
+          ./pkg/stylix.nix
           ./pkg/steam.nix
         ];
         specialArgs = moduleArgs;

@@ -12,6 +12,10 @@ in
     # License: MIT Copyright: 2024, Andrew Haust <https://github.com/sodapopcan/kitty-icon>
     "kitty/kitty.app.png".source = ../cfg/kitty.app.png;
     "ptpython/config.py".source = ../cfg/ptpython.py;
+    "lf" = {
+      source = ../cfg/lf;
+      recursive = true;
+    };
     "nvim" = {
       source = ../cfg/nvim;
       recursive = true;
@@ -134,6 +138,16 @@ in
         "--group-directories-last"
         "--sort=extension"
       ];
+    };
+
+    lf = {
+      enable = true;
+      settings = {
+        number = true;
+        relativenumber = true;
+        icons = true;
+        sortby = "ext";
+      };
     };
 
     bottom = {
