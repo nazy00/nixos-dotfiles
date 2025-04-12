@@ -28,7 +28,8 @@ in
     flake = "path:${userConfig.nixos}";
   };
   nix = {
-    package = lib.mkDefault pkgs.nixVersions.stable;
+    package = pkgs.nixVersions.stable;
+    optimise.dates = [ "weekly" ];
     gc = {
       automatic = true;
       dates = "weekly";
@@ -36,7 +37,6 @@ in
     };
     settings = {
       trusted-users = [ userName ];
-      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
