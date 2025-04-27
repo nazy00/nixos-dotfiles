@@ -36,8 +36,19 @@
       presel_feedback_color = "#6273a4";
     };
     rules = {
-      "xfce4-appfinder".state = "floating";
-      "xfce4-panel" = {
+      "Xfce4-appfinder" = {
+        state = "floating";
+        border = false;
+        focus = true;
+        layer = "above";
+      };
+      "Wrapper-2.0" = {
+        state = "floating";
+        border = false;
+        focus = true;
+        layer = "above";
+      };
+      "Xfce4-panel" = {
         state = "floating";
         layer = "above";
       };
