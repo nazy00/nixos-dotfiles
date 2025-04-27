@@ -17,13 +17,8 @@
         }
       ];
     };
-    plugins = {
-      relative-motions = pkgs.fetchFromGitHub {
-        owner = "dedukun";
-        repo = "relative-motions.yazi";
-        rev = "810306563e1928855f5cf61f83801544e3eb3788";
-        hash = "sha256-sIS7vtpY8z8D1nHMmr/uZoKREeGsIZuNSG8SnKkjREI=";
-      };
+    plugins = with pkgs.yaziPlugins; {
+      inherit relative-motions full-border yatline git;
     };
     initLua = ''
       require("relative-motions"):setup({ show_numbers="relative_absolute", show_motion = true })
