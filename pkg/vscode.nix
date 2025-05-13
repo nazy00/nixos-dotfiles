@@ -1,15 +1,12 @@
 {
   pkgs,
-  inputs,
   userConfig,
   ...
 }:
 let
   homeDir = userConfig.home;
-  system = pkgs.system;
-  extensions = inputs.nix-vscode-extensions.extensions.${system};
-  openvsxExt = with extensions.open-vsx; [
-    # add Open VSX Registry extensions (pre-release)
+  marketplaceExt = with pkgs.vscode-marketplace; [
+    # add VS Code Marketplace extensions (pre-release)
     zhuangtongfa.material-theme
     vscodevim.vim
     tomoki1207.pdf
@@ -24,23 +21,17 @@ let
     github.vscode-pull-request-github
     amazonwebservices.amazon-q-vscode
   ];
-  openvsxReleaseExt = with extensions.open-vsx-release; [
-    # add Open VSX Registry extensions (release)
-    eamodio.gitlens
-  ];
-  marketplaceExt = with extensions.vscode-marketplace; [
-    # add VS Code Marketplace extensions (pre-release)
-  ];
-  marketplaceReleaseExt = with extensions.vscode-marketplace-release; [
+  marketplaceReleaseExt = with pkgs.vscode-marketplace-release; [
     # add VS Code Marketplace extensions (release)
+    eamodio.gitlens
   ];
 in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
     profiles.default = {
-      extensions = marketplaceReleaseExt ++ marketplaceExt ++ openvsxReleaseExt ++ openvsxExt;
+      extensions = marketplaceReleaseExt ++ marketplaceExt;
       userSettings = {
         "editor.fontFamily" = "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
         "editor.formatOnSave" = true;
