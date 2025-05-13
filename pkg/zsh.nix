@@ -3,14 +3,6 @@ let
   nixConfigDir = userConfig.nixos;
 in
 {
-  # custom prompt
-  home.file.".config/zsh/zen".source = pkgs.fetchFromGitHub {
-    owner = "cybardev";
-    repo = "zen.zsh";
-    rev = "v2.0";
-    hash = "sha256-s/YLFdhCrJjcqvA6HuQtP0ADjBtOqAP+arjpFM2m4oQ=";
-  };
-
   # zshrc
   programs.zsh = {
     dotDir = ".config/zsh";
@@ -34,22 +26,14 @@ in
       ignoreAllDups = true;
       path = "$ZDOTDIR/history";
     };
-    initExtra = ''
+    initContent = ''
       path+=( "$(go env GOPATH)/bin" "$HOME/.local/bin" )
       cutefetch -m bunny
 
-      fpath+="$ZDOTDIR/zen"
+      fpath+="${pkgs.cy.zen-zsh}"
       autoload -Uz promptinit
       promptinit
       prompt zen
-
-      function etch() {
-        sudo dd bs=4M if=$2 of=/dev/$1 status=progress oflag=sync
-      }
-
-      function unly() {
-        curl -Is "$1" | grep ^location | cut -d ' ' -f 2
-      }
     '';
     shellAliases = {
       # shell conveniences
@@ -60,6 +44,7 @@ in
       icat = "kitten icat";
       ls = "eza -1 --icons=never";
       ll = "eza -1l";
+      lessr = "less -R";
       tree = "eza --tree";
       py = "ptpython";
       yt = "ytgo -i -m -p";
@@ -83,6 +68,10 @@ in
       yang = "nix-search";
       wuji = "nix-collect-garbage -d && sudo -H nix-collect-garbage -d";
       yup = "nix flake update --flake ${nixConfigDir} && re-nix";
+
+      # misc
+      unly = "f() { curl -Is '$1' | grep ^location | cut -d ' ' -f 2 }; f";
+      etch = "f() { sudo dd bs=4M if=$2 of=/dev/$1 status=progress oflag=sync }; f";
     };
   };
 }
