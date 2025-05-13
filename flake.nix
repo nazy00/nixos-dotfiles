@@ -59,6 +59,7 @@
           ./sys/home.nix
           ./pkg/list.nix
           ./pkg/bspwm.nix
+          ./pkg/picom.nix
           ./pkg/zsh.nix
           ./pkg/yazi.nix
           ./pkg/vscode.nix

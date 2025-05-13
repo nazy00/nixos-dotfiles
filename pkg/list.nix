@@ -66,6 +66,7 @@
         p7zip
         cmake
         ninja
+        xclip
         unzip
         rustc
         brave
