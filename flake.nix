@@ -53,6 +53,7 @@
       homeConfigurations.${userConfig.username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${userConfig.system};
         modules = [
+          ./sys/overlays.nix
           ./sys/gtk.nix
           ./sys/nonfree.nix
           ./sys/home.nix
