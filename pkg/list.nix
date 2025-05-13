@@ -3,9 +3,6 @@
   inputs,
   ...
 }:
-let
-  cypkgs = import inputs.cypkgs { inherit pkgs; };
-in
 {
   xdg.configFile = {
     # Custom Kitty Icon
@@ -33,7 +30,7 @@ in
     };
 
     packages =
-      (with cypkgs; [
+      (with pkgs.cy; [
         cutefetch
         ytgo
       ])
