@@ -13,5 +13,6 @@
       "steam-run"
       "steam-unwrapped"
       "steam-original"
+      "balatro"
     ];
 }
