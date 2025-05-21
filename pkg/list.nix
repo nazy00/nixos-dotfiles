@@ -38,6 +38,7 @@
         visidata
         inkscape
         aseprite
+        balatro
         shotcut
         cmatrix
         zoom-us
@@ -45,7 +46,6 @@
         thonny
         krita
         gimp
-        balatro
 
         # >---< DO NOT REMOVE >---< #
         nerd-fonts.caskaydia-cove

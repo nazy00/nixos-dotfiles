@@ -6,6 +6,7 @@
       "signal-desktop"
       "lunarclient"
       "aseprite"
+      "balatro"
       "vscode"
       "zoom"
       "rar"
@@ -13,6 +14,5 @@
       "steam-run"
       "steam-unwrapped"
       "steam-original"
-      "balatro"
     ];
 }
