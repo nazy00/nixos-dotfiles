@@ -35,6 +35,7 @@
         signal-desktop
         lunar-client
         imagemagick
+        webcamoid
         visidata
         inkscape
         aseprite
