@@ -35,6 +35,7 @@
         signal-desktop
         lunar-client
         imagemagick
+        discord-ptb
         webcamoid
         visidata
         inkscape
