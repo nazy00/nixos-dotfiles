@@ -34,12 +34,13 @@
         gnome-mahjongg
         signal-desktop
         lunar-client
+        libreoffice
         imagemagick
-        discord-ptb
         webcamoid
         visidata
         inkscape
         aseprite
+        discord
         balatro
         shotcut
         cmatrix

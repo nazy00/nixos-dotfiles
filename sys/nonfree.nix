@@ -7,6 +7,7 @@
       "lunarclient"
       "aseprite"
       "balatro"
+      "discord"
       "vscode"
       "zoom"
       "rar"
