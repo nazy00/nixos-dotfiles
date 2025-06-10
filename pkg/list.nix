@@ -45,6 +45,7 @@
         shotcut
         cmatrix
         zoom-us
+        mplayer
         logseq
         thonny
         krita
