@@ -6,7 +6,6 @@
       "signal-desktop"
       "lunarclient"
       "aseprite"
-      "balatro"
       "discord"
       "vscode"
       "zoom"

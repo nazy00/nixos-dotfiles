@@ -41,7 +41,6 @@
         inkscape
         aseprite
         discord
-        balatro
         shotcut
         cmatrix
         zoom-us
