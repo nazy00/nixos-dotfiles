@@ -37,6 +37,7 @@
         libreoffice
         imagemagick
         webcamoid
+        python314
         visidata
         inkscape
         aseprite
