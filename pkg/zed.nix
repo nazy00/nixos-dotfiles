@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.zed-editor = {
     enable = true;
@@ -23,7 +22,7 @@
       disable_ai = true;
       theme = {
         mode = "dark";
-        dark = "Kanagawa Dragon";
+        dark = "Warp One Dark";
         light = "Kanagawa Lotus";
       };
       buffer_font_family = "CaskaydiaCove Nerd Font";
