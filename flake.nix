@@ -62,7 +62,7 @@
           ./pkg/picom.nix
           ./pkg/zsh.nix
           ./pkg/yazi.nix
-          ./pkg/vscode.nix
+          ./pkg/zed.nix
         ];
         extraSpecialArgs = moduleArgs;
       };

@@ -17,7 +17,7 @@ let
 in
 {
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     dates = "weekly";
     operation = "boot";
     flags = [

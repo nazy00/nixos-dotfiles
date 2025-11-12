@@ -28,7 +28,7 @@ let
 in
 {
   programs.vscode = {
-    enable = true;
+    enable = false;
     # package = pkgs.vscodium;
     profiles.default = {
       extensions = marketplaceReleaseExt ++ marketplaceExt;

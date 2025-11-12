@@ -32,7 +32,7 @@ in
     package = pkgs.nixVersions.stable;
     gc = {
       automatic = true;
-      frequency = "weekly";
+      dates = "weekly";
       options = "--delete-older-than 30d";
     };
     settings = {

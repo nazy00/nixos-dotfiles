@@ -35,7 +35,6 @@
         signal-desktop
         # easyrpg-player
         lunar-client
-        openshot-qt
         libreoffice
         imagemagick
         webcamoid
@@ -204,9 +203,11 @@
     git = {
       enable = true;
       package = pkgs.gitFull;
-      userName = "nazy00";
-      userEmail = "81646930+nazy00@users.noreply.github.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "nazy00";
+          email = "81646930+nazy00@users.noreply.github.com";
+        };
         init.defaultBranch = "main";
         credential.helper = "store";
         pull.rebase = false;

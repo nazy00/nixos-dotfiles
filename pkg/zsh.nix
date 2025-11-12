@@ -1,11 +1,11 @@
-{ pkgs, userConfig, ... }:
+{ pkgs, config, userConfig, ... }:
 let
   nixConfigDir = userConfig.nixos;
 in
 {
   # zshrc
   programs.zsh = {
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     enable = true;
     autocd = true;
     enableCompletion = true;
