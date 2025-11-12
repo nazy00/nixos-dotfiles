@@ -33,7 +33,9 @@
       ++ (with pkgs; [
         gnome-mahjongg
         signal-desktop
+        # easyrpg-player
         lunar-client
+        openshot-qt
         libreoffice
         imagemagick
         webcamoid
@@ -46,10 +48,14 @@
         cmatrix
         zoom-us
         mplayer
+        ffmpeg
+        logseq
         logseq
         thonny
+        unzip
         krita
         gimp
+        zip
 
         # >---< DO NOT REMOVE >---< #
         nerd-fonts.caskaydia-cove
