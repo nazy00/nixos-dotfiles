@@ -49,7 +49,6 @@
         mplayer
         ffmpeg
         logseq
-        logseq
         thonny
         unzip
         krita
