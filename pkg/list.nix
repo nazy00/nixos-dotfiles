@@ -34,7 +34,7 @@
         gnome-mahjongg
         signal-desktop
         # easyrpg-player
-        lunar-client
+        prismlauncher
         libreoffice
         imagemagick
         webcamoid
@@ -60,7 +60,7 @@
         nerd-fonts.caskaydia-cove
         nerd-fonts.jetbrains-mono
         nerd-fonts.fira-code
-        nixfmt-rfc-style
+        nixfmt
         nix-search-cli
         xorg.xdpyinfo
         dfu-util
@@ -162,8 +162,8 @@
     mpv = {
       enable = true;
       package = (
-        pkgs.mpv-unwrapped.wrapper {
-          mpv = pkgs.mpv-unwrapped.override {
+        pkgs.mpv.override {
+          mpv-unwrapped = pkgs.mpv-unwrapped.override {
             ffmpeg = pkgs.ffmpeg-full;
           };
           youtubeSupport = true;
@@ -196,7 +196,7 @@
     };
 
     poetry = {
-      enable = true;
+      enable = false;
       settings.virtualenvs.in-project = true;
     };
 

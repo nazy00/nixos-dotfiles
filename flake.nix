@@ -29,8 +29,8 @@
     let
       userConfig =
         let
-          nickname = "Naziya";
-          username = "nazy00";
+          nickname = "Naz";
+          username = "angel";
           hostname = "hostility";
           home = "/home/${username}";
         in
