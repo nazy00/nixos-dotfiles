@@ -33,7 +33,6 @@
       ++ (with pkgs; [
         gnome-mahjongg
         signal-desktop
-        # easyrpg-player
         prismlauncher
         libreoffice
         imagemagick
@@ -47,6 +46,7 @@
         cmatrix
         zoom-us
         mplayer
+        esptool
         ffmpeg
         logseq
         thonny
