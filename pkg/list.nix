@@ -34,6 +34,7 @@
         gnome-mahjongg
         signal-desktop
         prismlauncher
+        virt-manager
         libreoffice
         imagemagick
         webcamoid
